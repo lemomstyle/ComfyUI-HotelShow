@@ -1,0 +1,7 @@
+[project]
+name = "comfyui-hotelshow"
+version = "0.1.0"
+description = "Hotel photo editorial layouts with deterministic Chinese typography for ComfyUI"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = ["Pillow>=10.0", "numpy>=1.24"]

@@ -1,0 +1,167 @@
+{
+  "1": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": ""
+    },
+    "_meta": {
+      "title": "酒店实拍 1（选择你自己的照片）"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": ""
+    },
+    "_meta": {
+      "title": "酒店实拍 2（选择你自己的照片）"
+    }
+  },
+  "3": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": ""
+    },
+    "_meta": {
+      "title": "酒店实拍 3（选择你自己的照片）"
+    }
+  },
+  "4": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": ""
+    },
+    "_meta": {
+      "title": "酒店实拍 4（选择你自己的照片）"
+    }
+  },
+  "5": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": ""
+    },
+    "_meta": {
+      "title": "酒店实拍 5（选择你自己的照片）"
+    }
+  },
+  "6": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": ""
+    },
+    "_meta": {
+      "title": "酒店实拍 6（选择你自己的照片）"
+    }
+  },
+  "7": {
+    "class_type": "HotelShowPrepare",
+    "inputs": {
+      "source": "",
+      "hotel_name": "请填写酒店名称",
+      "confirmed_facts": "",
+      "style": "根据照片自动选择配色与字体。优雅、留白充分、中文清晰。",
+      "image1": [
+        "1",
+        0
+      ],
+      "image2": [
+        "2",
+        0
+      ],
+      "image3": [
+        "3",
+        0
+      ],
+      "image4": [
+        "4",
+        0
+      ],
+      "image5": [
+        "5",
+        0
+      ],
+      "image6": [
+        "6",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "01 · 多图整理 / 填写酒店信息"
+    }
+  },
+  "8": {
+    "class_type": "RHLLMChatNode",
+    "inputs": {
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "role": "你是酒店内容策划。严格遵守用户提示中的 JSON 结构与事实边界。只返回 JSON。",
+      "prompt": [
+        "7",
+        2
+      ],
+      "temperature": 0.3,
+      "max_tokens": 10000,
+      "top_p": 1.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "reasoning_effort": "none",
+      "seed": 0,
+      "skip_error": false,
+      "image1": [
+        "7",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "02 · 官方多模态：看图 / 文案 / 排版策划"
+    }
+  },
+  "9": {
+    "class_type": "HotelShowRender",
+    "inputs": {
+      "width": 1080,
+      "page_height": 1440,
+      "theme": "auto",
+      "photo_fit": "contain",
+      "title_font": "",
+      "body_font": "",
+      "manual_plan": "",
+      "photos": [
+        "7",
+        0
+      ],
+      "plan_json": [
+        "8",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "03 · 原照片精确拼版 / 中文字体渲染"
+    }
+  },
+  "10": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "HotelShow/pages",
+      "images": [
+        "9",
+        0
+      ]
+    },
+    "_meta": {
+      "title": "04 · 分页输出"
+    }
+  },
+  "11": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "HotelShow/long",
+      "images": [
+        "9",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "05 · 完整长图"
+    }
+  }
+}

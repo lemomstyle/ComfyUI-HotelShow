@@ -1,0 +1,3 @@
+Pillow>=10.0
+numpy>=1.24
+# torch, aiohttp and folder_paths are provided by ComfyUI.

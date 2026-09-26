@@ -1,0 +1,4 @@
+01_精确排版_ZIP输入.json: 5 nodes / 6 links — OK
+02_精确排版_多图输入.json: 11 nodes / 12 links — OK
+03_仅现成节点_生成式设计稿.json: 8 nodes / 7 links — OK
+Source: RunningHub official node source, fetched 2026-09-26. Static schema/link validation only; no cloud execution.
